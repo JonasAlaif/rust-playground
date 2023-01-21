@@ -115,6 +115,7 @@ export enum Focus {
   Wasm = 'wasm',
   Asm = 'asm',
   Execute = 'execute',
+  Russol = 'russol',
   Format = 'format',
   Gist = 'gist',
 }

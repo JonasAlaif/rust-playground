@@ -13,8 +13,8 @@ use std::{
 use tempfile::TempDir;
 use tokio::{fs, process::Command, time};
 
-const DOCKER_PROCESS_TIMEOUT_SOFT: Duration = Duration::from_secs(10);
-const DOCKER_PROCESS_TIMEOUT_HARD: Duration = Duration::from_secs(12);
+const DOCKER_PROCESS_TIMEOUT_SOFT: Duration = Duration::from_secs(30);
+const DOCKER_PROCESS_TIMEOUT_HARD: Duration = Duration::from_secs(32);
 
 #[derive(Debug, Deserialize)]
 struct CrateInformationInner {
@@ -344,6 +344,26 @@ impl Sandbox {
         })
     }
 
+    pub async fn russol(&self, req: &RussolRequest) -> Result<RussolResponse> {
+        println!("russol");
+
+        self.write_source_code(&req.code).await?;
+        let command = self.russol_command(req);
+
+        let output = run_command_with_timeout(command).await?;
+
+        println!("output: {:?}", output);
+
+        Ok(RussolResponse {
+            success: output.status.success(),
+            code: read(self.input_file.as_ref())
+                .await?
+                .context(OutputMissingSnafu)?,
+            stdout: vec_to_str(output.stdout)?,
+            stderr: vec_to_str(output.stderr)?,
+        })
+    }
+
     pub async fn format(&self, req: &FormatRequest) -> Result<FormatResponse> {
         self.write_source_code(&req.code).await?;
         let command = self.format_command(req);
@@ -538,6 +558,20 @@ impl Sandbox {
         cmd.arg(&channel.container_name()).args(&execution_cmd);
 
         log::debug!("Execution command is {:?}", cmd);
+
+        cmd
+    }
+
+    fn russol_command(&self, req: impl EditionRequest) -> Command {
+        let crate_type = CrateType::Binary;
+
+        let mut cmd = self.docker_command(Some(crate_type));
+
+        cmd.apply_edition(req);
+
+        cmd.arg("russol").args(&["cargo", "russol"]);
+
+        log::debug!("Russol command is {:?}", cmd);
 
         cmd
     }
@@ -966,6 +1000,26 @@ impl BacktraceRequest for ExecuteRequest {
 #[derive(Debug, Clone)]
 pub struct ExecuteResponse {
     pub success: bool,
+    pub stdout: String,
+    pub stderr: String,
+}
+
+#[derive(Debug, Clone)]
+pub struct RussolRequest {
+    pub code: String,
+    pub edition: Option<Edition>,
+}
+
+impl EditionRequest for RussolRequest {
+    fn edition(&self) -> Option<Edition> {
+        self.edition
+    }
+}
+
+#[derive(Debug, Clone)]
+pub struct RussolResponse {
+    pub success: bool,
+    pub code: String,
     pub stdout: String,
     pub stderr: String,
 }

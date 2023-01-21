@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 import assembly from './assembly';
 import clippy from './clippy';
 import execute from './execute';
+import russol from './russol';
 import format from './format';
 import gist from './gist';
 import hir from './hir';
@@ -15,6 +16,7 @@ import wasm from './wasm';
 
 const output = combineReducers({
   meta,
+  russol,
   format,
   clippy,
   miri,

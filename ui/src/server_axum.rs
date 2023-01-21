@@ -7,7 +7,7 @@ use crate::{
     sandbox::{self, Channel, Sandbox},
     CachingSnafu, ClippyRequest, ClippyResponse, CompilationSnafu, CompileRequest, CompileResponse,
     Config, Error, ErrorJson, EvaluateRequest, EvaluateResponse, EvaluationSnafu, ExecuteRequest,
-    ExecuteResponse, ExecutionSnafu, ExpansionSnafu, FormatRequest, FormatResponse,
+    ExecuteResponse, ExecutionSnafu, ExpansionSnafu, RussolRequest, RussolResponse, FormatRequest, FormatResponse,
     FormattingSnafu, GhToken, GistCreationSnafu, GistLoadingSnafu, InterpretingSnafu, LintingSnafu,
     MacroExpansionRequest, MacroExpansionResponse, MetaCratesResponse, MetaGistCreateRequest,
     MetaGistResponse, MetaVersionResponse, MetricsToken, MiriRequest, MiriResponse, Result,
@@ -64,6 +64,7 @@ pub(crate) async fn serve(config: Config) {
         .route("/evaluate.json", post(evaluate))
         .route("/compile", post(compile))
         .route("/execute", post(execute))
+        .route("/russol", post(russol))
         .route("/format", post(format))
         .route("/clippy", post(clippy))
         .route("/miri", post(miri))
@@ -164,6 +165,16 @@ async fn execute(Json(req): Json<ExecuteRequest>) -> Result<Json<ExecuteResponse
         req,
         |sb, req| async move { sb.execute(req).await }.boxed(),
         ExecutionSnafu,
+    )
+    .await
+    .map(Json)
+}
+
+async fn russol(Json(req): Json<RussolRequest>) -> Result<Json<RussolResponse>> {
+    with_sandbox(
+        req,
+        |sb, req: &sandbox::RussolRequest| async move { sb.russol(req).await }.boxed(),
+        FormattingSnafu,
     )
     .await
     .map(Json)

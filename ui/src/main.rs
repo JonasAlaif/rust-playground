@@ -260,6 +260,21 @@ struct ExecuteResponse {
 }
 
 #[derive(Debug, Clone, Deserialize)]
+struct RussolRequest {
+    code: String,
+    #[serde(default)]
+    edition: String,
+}
+
+#[derive(Debug, Clone, Serialize)]
+struct RussolResponse {
+    success: bool,
+    code: String,
+    stdout: String,
+    stderr: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
 struct FormatRequest {
     code: String,
     #[serde(default)]
@@ -440,6 +455,29 @@ impl From<sandbox::ExecuteResponse> for ExecuteResponse {
     fn from(me: sandbox::ExecuteResponse) -> Self {
         ExecuteResponse {
             success: me.success,
+            stdout: me.stdout,
+            stderr: me.stderr,
+        }
+    }
+}
+
+
+impl TryFrom<RussolRequest> for sandbox::RussolRequest {
+    type Error = Error;
+
+    fn try_from(me: RussolRequest) -> Result<Self> {
+        Ok(sandbox::RussolRequest {
+            code: me.code,
+            edition: parse_edition(&me.edition)?,
+        })
+    }
+}
+
+impl From<sandbox::RussolResponse> for RussolResponse {
+    fn from(me: sandbox::RussolResponse) -> Self {
+        RussolResponse {
+            success: me.success,
+            code: me.code,
             stdout: me.stdout,
             stderr: me.stderr,
         }
