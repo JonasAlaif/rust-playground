@@ -158,6 +158,7 @@ export const hasProperties = (obj: {}) => Object.values(obj).some(val => !!val);
 
 const getOutputs = (state: State) => [
   state.output.assembly,
+  state.output.russol,
   state.output.clippy,
   state.output.execute,
   state.output.format,
@@ -288,6 +289,12 @@ export const clippyRequestSelector = createSelector(
   editionSelector,
   getCrateType,
   (code, edition, crateType) => ({ code, edition, crateType }),
+);
+
+export const russolRequestSelector = createSelector(
+  codeSelector,
+  editionSelector,
+  (code, edition) => ({ code, edition }),
 );
 
 export const formatRequestSelector = createSelector(

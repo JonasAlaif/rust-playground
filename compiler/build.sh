@@ -3,7 +3,7 @@
 set -euv -o pipefail
 
 channels_to_build="${CHANNELS_TO_BUILD-stable beta nightly}"
-tools_to_build="${TOOLS_TO_BUILD-rustfmt clippy miri}"
+tools_to_build="${TOOLS_TO_BUILD-russol rustfmt clippy miri}"
 perform_push="${PERFORM_PUSH-false}"
 
 repository=shepmaster

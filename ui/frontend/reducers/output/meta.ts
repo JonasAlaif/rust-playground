@@ -40,6 +40,11 @@ export default function meta(state = DEFAULT, action: Action) {
     case ActionType.ExecuteRequest:
       return { ...state, focus: Focus.Execute };
 
+    case ActionType.RequestRussol:
+      return { ...state, focus: Focus.Russol };
+    case ActionType.RussolSucceeded:
+      return { ...state, focus: undefined };
+
     case ActionType.RequestFormat:
       return { ...state, focus: Focus.Format };
     case ActionType.FormatSucceeded:

@@ -24,6 +24,10 @@ const ToolsMenu: React.FC<ToolsMenuProps> = props => {
   const nightlyVersionDetails = useSelector(selectors.nightlyVersionDetailsText);
 
   const dispatch = useAppDispatch();
+  const russol = useCallback(() => {
+    dispatch(actions.performRussol());
+    props.close();
+  }, [dispatch, props]);
   const clippy = useCallback(() => {
     dispatch(actions.performClippy());
     props.close();
@@ -43,6 +47,11 @@ const ToolsMenu: React.FC<ToolsMenuProps> = props => {
 
   return (
     <MenuGroup title="Tools">
+      <ButtonMenuItem
+        name="RusSOL"
+        onClick={russol}>
+        <div>Synthesize a function with RusSOL.</div>
+      </ButtonMenuItem>
       <ButtonMenuItem
         name="Rustfmt"
         onClick={format}>

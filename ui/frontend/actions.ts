@@ -4,6 +4,7 @@ import url, { UrlObject } from 'url';
 
 import {
   clippyRequestSelector,
+  russolRequestSelector,
   formatRequestSelector,
   getCrateType,
   isAutoBuildSelector,
@@ -36,6 +37,7 @@ import {
 const routes = {
   compile: { pathname: '/compile' },
   execute: { pathname: '/execute' },
+  russol: { pathname: '/russol' },
   format: { pathname: '/format' },
   clippy: { pathname: '/clippy' },
   miri: { pathname: '/miri' },
@@ -102,6 +104,9 @@ export enum ActionType {
   EnableFeatureGate = 'ENABLE_FEATURE_GATE',
   GotoPosition = 'GOTO_POSITION',
   SelectText = 'SELECT_TEXT',
+  RequestRussol = 'REQUEST_RUSSOL',
+  RussolSucceeded = 'RUSSOL_SUCCEEDED',
+  RussolFailed = 'RUSSOL_FAILED',
   RequestFormat = 'REQUEST_FORMAT',
   FormatSucceeded = 'FORMAT_SUCCEEDED',
   FormatFailed = 'FORMAT_FAILED',
@@ -518,6 +523,46 @@ export const gotoPosition = (line: string | number, column: string | number) =>
 
 export const selectText = (start: Position, end: Position) =>
   createAction(ActionType.SelectText, { start, end });
+
+const requestRussol = () =>
+  createAction(ActionType.RequestRussol);
+
+interface RussolRequestBody {
+  code: string;
+  edition: string;
+}
+
+interface RussolResponseBody {
+  success: boolean;
+  code: string;
+  stdout: string;
+  stderr: string;
+}
+
+const receiveRussolSuccess = (body: RussolResponseBody) =>
+  createAction(ActionType.RussolSucceeded, body);
+
+const receiveRussolFailure = (body: RussolResponseBody) =>
+  createAction(ActionType.RussolFailed, body);
+
+export function performRussol(): ThunkAction {
+  // TODO: Check a cache
+  return function(dispatch, getState) {
+    dispatch(requestRussol());
+
+    const body: RussolRequestBody = russolRequestSelector(getState());
+
+    return jsonPost<RussolResponseBody>(routes.russol, body)
+      .then(json => {
+        if (json.success) {
+          dispatch(receiveRussolSuccess(json));
+        } else {
+          dispatch(receiveRussolFailure(json));
+        }
+      })
+      .catch(json => dispatch(receiveRussolFailure(json)));
+  };
+}
 
 const requestFormat = () =>
   createAction(ActionType.RequestFormat);
@@ -937,6 +982,9 @@ export type Action =
   | ReturnType<typeof enableFeatureGate>
   | ReturnType<typeof gotoPosition>
   | ReturnType<typeof selectText>
+  | ReturnType<typeof requestRussol>
+  | ReturnType<typeof receiveRussolSuccess>
+  | ReturnType<typeof receiveRussolFailure>
   | ReturnType<typeof requestFormat>
   | ReturnType<typeof receiveFormatSuccess>
   | ReturnType<typeof receiveFormatFailure>

@@ -183,6 +183,25 @@ impl GenerateLabels for sandbox::ExecuteRequest {
     }
 }
 
+impl GenerateLabels for sandbox::RussolRequest {
+    fn generate_labels(&self, outcome: Outcome) -> Labels {
+        let Self { edition, code: _ } = *self;
+
+        Labels {
+            endpoint: Endpoint::Format,
+            outcome,
+
+            target: None,
+            channel: None,
+            mode: None,
+            edition: Some(edition),
+            crate_type: None,
+            tests: None,
+            backtrace: None,
+        }
+    }
+}
+
 impl GenerateLabels for sandbox::FormatRequest {
     fn generate_labels(&self, outcome: Outcome) -> Labels {
         let Self { edition, code: _ } = *self;
@@ -306,6 +325,12 @@ impl SuccessDetails for sandbox::CompileResponse {
 }
 
 impl SuccessDetails for sandbox::ExecuteResponse {
+    fn success_details(&self) -> Outcome {
+        common_success_details(self.success, &self.stderr)
+    }
+}
+
+impl SuccessDetails for sandbox::RussolResponse {
     fn success_details(&self) -> Outcome {
         common_success_details(self.success, &self.stderr)
     }

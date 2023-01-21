@@ -25,6 +25,8 @@ export default function code(state = DEFAULT, action: Action): State {
     case ActionType.EnableFeatureGate:
       return `#![feature(${action.featureGate})]\n${state}`;
 
+    case ActionType.RussolSucceeded:
+      return action.code;
     case ActionType.FormatSucceeded:
       return action.code;
 
