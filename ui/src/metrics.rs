@@ -185,7 +185,7 @@ impl GenerateLabels for sandbox::ExecuteRequest {
 
 impl GenerateLabels for sandbox::RussolRequest {
     fn generate_labels(&self, outcome: Outcome) -> Labels {
-        let Self { edition, code: _ } = *self;
+        let Self { edition, crate_type, code: _ } = *self;
 
         Labels {
             endpoint: Endpoint::Format,
@@ -195,7 +195,7 @@ impl GenerateLabels for sandbox::RussolRequest {
             channel: None,
             mode: None,
             edition: Some(edition),
-            crate_type: None,
+            crate_type: Some(crate_type),
             tests: None,
             backtrace: None,
         }

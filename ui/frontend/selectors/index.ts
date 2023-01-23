@@ -294,7 +294,8 @@ export const clippyRequestSelector = createSelector(
 export const russolRequestSelector = createSelector(
   codeSelector,
   editionSelector,
-  (code, edition) => ({ code, edition }),
+  getCrateType,
+  (code, edition, crateType) => ({ code, edition, crateType }),
 );
 
 export const formatRequestSelector = createSelector(

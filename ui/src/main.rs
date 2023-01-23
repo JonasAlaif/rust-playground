@@ -264,6 +264,8 @@ struct RussolRequest {
     code: String,
     #[serde(default)]
     edition: String,
+    #[serde(default = "default_crate_type", rename = "crateType")]
+    crate_type: String,
 }
 
 #[derive(Debug, Clone, Serialize)]
@@ -468,6 +470,7 @@ impl TryFrom<RussolRequest> for sandbox::RussolRequest {
     fn try_from(me: RussolRequest) -> Result<Self> {
         Ok(sandbox::RussolRequest {
             code: me.code,
+            crate_type: parse_crate_type(&me.crate_type)?,
             edition: parse_edition(&me.edition)?,
         })
     }

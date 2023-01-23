@@ -562,11 +562,10 @@ impl Sandbox {
         cmd
     }
 
-    fn russol_command(&self, req: impl EditionRequest) -> Command {
-        let crate_type = CrateType::Binary;
+    fn russol_command(&self, req: impl CrateTypeRequest + EditionRequest) -> Command {
+        let mut cmd = self.docker_command(Some(req.crate_type()));
 
-        let mut cmd = self.docker_command(Some(crate_type));
-
+        cmd.apply_crate_type(&req);
         cmd.apply_edition(req);
 
         cmd.arg("russol").args(&["cargo", "russol"]);
@@ -1008,11 +1007,18 @@ pub struct ExecuteResponse {
 pub struct RussolRequest {
     pub code: String,
     pub edition: Option<Edition>,
+    pub crate_type: CrateType,
+}
+
+impl CrateTypeRequest for RussolRequest {
+    fn crate_type(&self) -> CrateType {
+        self.crate_type
+    }
 }
 
 impl EditionRequest for RussolRequest {
     fn edition(&self) -> Option<Edition> {
-        self.edition
+        Some(Edition::Rust2021)
     }
 }
 
