@@ -50,8 +50,6 @@ RUN \
 USER playground
 WORKDIR /playground
 
-RUN rustup component add rustfmt-preview
-
 RUN git clone --recursive https://github.com/JonasAlaif/russol-alpha.git
 RUN cd russol-alpha && cargo build --release
 ENV PATH="${PATH}:/playground/russol-alpha/target/release"
@@ -60,5 +58,6 @@ RUN cd russol-alpha && cargo run --release --bin ruslic ruslic/tests/synth/paper
 
 RUN cargo russol
 RUN rm src/*.rs
+RUN rustup component add rustfmt-preview
 
 ENTRYPOINT ["/playground/tools/entrypoint.sh"]
