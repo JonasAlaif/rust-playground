@@ -530,6 +530,7 @@ const requestRussol = () =>
 interface RussolRequestBody {
   code: string;
   edition: string;
+  crateType: string;
 }
 
 interface RussolResponseBody {

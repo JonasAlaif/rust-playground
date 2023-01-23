@@ -47,12 +47,14 @@ interface PaneWithCodeProps extends SimplePaneProps {
 
 const Output: React.FC = () => {
   const somethingToShow = useSelector(selectors.getSomethingToShow);
-  const { meta: { focus }, execute, format, clippy, miri, macroExpansion, assembly, llvmIr, mir, hir, wasm, gist } =
+  const { meta: { focus }, execute, russol, format, clippy, miri,
+    macroExpansion, assembly, llvmIr, mir, hir, wasm, gist } =
     useSelector((state: State) => state.output);
 
   const dispatch = useDispatch();
   const focusClose = useCallback(() => dispatch(actions.changeFocus()), [dispatch]);
   const focusExecute = useCallback(() => dispatch(actions.changeFocus(Focus.Execute)), [dispatch]);
+  const focusRussol = useCallback(() => dispatch(actions.changeFocus(Focus.Russol)), [dispatch]);
   const focusFormat = useCallback(() => dispatch(actions.changeFocus(Focus.Format)), [dispatch]);
   const focusClippy = useCallback(() => dispatch(actions.changeFocus(Focus.Clippy)), [dispatch]);
   const focusMiri = useCallback(() => dispatch(actions.changeFocus(Focus.Miri)), [dispatch]);
@@ -76,6 +78,7 @@ const Output: React.FC = () => {
     body = (
       <div className={styles.body}>
         {focus === Focus.Execute && <Execute />}
+        {focus === Focus.Russol && <SimplePane {...russol} kind="russol" />}
         {focus === Focus.Format && <SimplePane {...format} kind="format" />}
         {focus === Focus.Clippy && <SimplePane {...clippy} kind="clippy" />}
         {focus === Focus.Miri && <SimplePane {...miri} kind="miri" />}
@@ -101,6 +104,10 @@ const Output: React.FC = () => {
           label="Format"
           onClick={focusFormat}
           tabProps={format} />
+        <Tab kind={Focus.Russol} focus={focus}
+          label="RusSOL"
+          onClick={focusRussol}
+          tabProps={russol} />
         <Tab kind={Focus.Clippy} focus={focus}
           label="Clippy"
           onClick={focusClippy}
