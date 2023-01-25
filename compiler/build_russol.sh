@@ -5,7 +5,7 @@ set -euv -o pipefail
 tools_to_build="${TOOLS_TO_BUILD-russol}"
 perform_push="${PERFORM_PUSH-false}"
 
-repository=shepmaster
+repository=jonasalaif
 
 crate_api_base=https://crates.io/api/v1/crates
 

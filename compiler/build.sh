@@ -2,11 +2,11 @@
 
 set -euv -o pipefail
 
-channels_to_build="${CHANNELS_TO_BUILD-stable beta nightly}"
+channels_to_build="${CHANNELS_TO_BUILD-nightly}"
 tools_to_build="${TOOLS_TO_BUILD-russol rustfmt clippy miri}"
 perform_push="${PERFORM_PUSH-false}"
 
-repository=shepmaster
+repository=jonasalaif
 
 for channel in $channels_to_build; do
     cd "base"

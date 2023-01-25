@@ -901,7 +901,7 @@ export function indexPageLoad({
   edition: editionString,
 }: { code?: string, gist?: string, version?: string, mode?: string, edition?: string }): ThunkAction {
   return function(dispatch) {
-    const channel = parseChannel(version) || Channel.Stable;
+    const channel = parseChannel(version) || Channel.Nightly;
     const mode = parseMode(modeString) || Mode.Debug;
     let maybeEdition = parseEdition(editionString);
 

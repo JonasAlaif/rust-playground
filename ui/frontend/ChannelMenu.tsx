@@ -17,10 +17,10 @@ interface ChannelMenuProps {
 
 const ChannelMenu: React.FC<ChannelMenuProps> = props => {
   const channel = useSelector((state: State) => state.configuration.channel);
-  const stableVersion = useSelector(selectors.stableVersionText);
-  const betaVersion = useSelector(selectors.betaVersionText);
+  // const stableVersion = useSelector(selectors.stableVersionText);
+  // const betaVersion = useSelector(selectors.betaVersionText);
   const nightlyVersion = useSelector(selectors.nightlyVersionText);
-  const betaVersionDetails = useSelector(selectors.betaVersionDetailsText);
+  // const betaVersionDetails = useSelector(selectors.betaVersionDetailsText);
   const nightlyVersionDetails = useSelector(selectors.nightlyVersionDetailsText);
 
   const dispatch = useDispatch();
@@ -32,23 +32,6 @@ const ChannelMenu: React.FC<ChannelMenuProps> = props => {
   return (
     <Fragment>
       <MenuGroup title="Channel &mdash; Choose the rust version">
-        <SelectOne
-          name="Stable channel"
-          currentValue={channel}
-          thisValue={Channel.Stable}
-          changeValue={changeChannel}
-        >
-          <Desc>Build using the Stable version: {stableVersion}</Desc>
-        </SelectOne>
-        <SelectOne
-          name="Beta channel"
-          currentValue={channel}
-          thisValue={Channel.Beta}
-          changeValue={changeChannel}
-        >
-          <Desc>Build using the Beta version: {betaVersion}</Desc>
-          <Desc>({betaVersionDetails})</Desc>
-        </SelectOne>
         <SelectOne
           name="Nightly channel"
           currentValue={channel}

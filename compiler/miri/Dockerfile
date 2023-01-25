@@ -1,4 +1,4 @@
-ARG base_image=shepmaster/rust-nightly:sources
+ARG base_image=jonasalaif/rust-nightly:sources
 FROM ${base_image}
 
 RUN rustup component add rust-src miri

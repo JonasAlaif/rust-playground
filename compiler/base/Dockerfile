@@ -35,6 +35,10 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal --default-too
 
 ADD --chown=playground entrypoint.sh /playground/tools/
 
+# Setup russol
+
+RUN git clone --recursive https://github.com/JonasAlaif/russol-alpha.git
+
 # Fetch all the crate source files
 
 FROM toolchain as bare-sources

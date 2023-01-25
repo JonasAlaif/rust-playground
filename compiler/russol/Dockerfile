@@ -1,4 +1,4 @@
-ARG base_image=shepmaster/rust-nightly:sources
+ARG base_image=jonasalaif/rust-nightly:sources
 FROM ${base_image}
 
 # Install java
@@ -50,7 +50,7 @@ RUN \
 USER playground
 WORKDIR /playground
 
-RUN git clone --recursive https://github.com/JonasAlaif/russol-alpha.git
+# RUN git clone --recursive https://github.com/JonasAlaif/russol-alpha.git
 RUN cd russol-alpha && cargo build --release
 ENV PATH="${PATH}:/playground/russol-alpha/target/release"
 ENV SUSLIK_DIR="/playground/russol-alpha/suslik"
