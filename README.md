@@ -1,3 +1,12 @@
+## Quickstart
+
+```bash
+cd ui/frontend; yarn && yarn run build; cd ../.. # Builds frontend
+cd compiler; ./build.sh; cd .. # Builds docker backends, will take a while
+cd ui; cargo run # Starts the server
+# Now open browser at 127.0.0.1:5000
+```
+
 # Rust Playground
 
 This is the home of the [Rust Playground][real],
