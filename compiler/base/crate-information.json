@@ -11,7 +11,7 @@
   },
   {
     "name": "ahash",
-    "version": "0.8.2",
+    "version": "0.8.3",
     "id": "ahash"
   },
   {
@@ -30,8 +30,23 @@
     "id": "ansi_term"
   },
   {
+    "name": "anstream",
+    "version": "0.2.6",
+    "id": "anstream"
+  },
+  {
+    "name": "anstyle",
+    "version": "0.3.5",
+    "id": "anstyle"
+  },
+  {
+    "name": "anstyle-parse",
+    "version": "0.1.1",
+    "id": "anstyle_parse"
+  },
+  {
     "name": "anyhow",
-    "version": "1.0.68",
+    "version": "1.0.70",
     "id": "anyhow"
   },
   {
@@ -51,12 +66,12 @@
   },
   {
     "name": "async-recursion",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "id": "async_recursion"
   },
   {
     "name": "async-trait",
-    "version": "0.1.61",
+    "version": "0.1.68",
     "id": "async_trait"
   },
   {
@@ -85,13 +100,8 @@
     "id": "base64"
   },
   {
-    "name": "base64",
-    "version": "0.13.1",
-    "id": "base64_0_13_1"
-  },
-  {
     "name": "bit_field",
-    "version": "0.10.1",
+    "version": "0.10.2",
     "id": "bit_field"
   },
   {
@@ -106,27 +116,27 @@
   },
   {
     "name": "bitflags",
-    "version": "1.3.2",
+    "version": "2.1.0",
     "id": "bitflags"
   },
   {
+    "name": "bitflags",
+    "version": "1.3.2",
+    "id": "bitflags_1_3_2"
+  },
+  {
     "name": "block-buffer",
-    "version": "0.10.3",
+    "version": "0.10.4",
     "id": "block_buffer"
   },
   {
-    "name": "bstr",
-    "version": "0.2.17",
-    "id": "bstr"
-  },
-  {
     "name": "bytemuck",
-    "version": "1.12.3",
+    "version": "1.13.1",
     "id": "bytemuck"
   },
   {
     "name": "bytemuck_derive",
-    "version": "1.3.0",
+    "version": "1.4.1",
     "id": "bytemuck_derive"
   },
   {
@@ -136,7 +146,7 @@
   },
   {
     "name": "bytes",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "id": "bytes"
   },
   {
@@ -146,7 +156,7 @@
   },
   {
     "name": "cc",
-    "version": "1.0.78",
+    "version": "1.0.79",
     "id": "cc"
   },
   {
@@ -156,28 +166,43 @@
   },
   {
     "name": "chrono",
-    "version": "0.4.23",
+    "version": "0.4.24",
     "id": "chrono"
   },
   {
     "name": "clap",
-    "version": "4.0.32",
+    "version": "4.2.1",
     "id": "clap"
   },
   {
+    "name": "clap_builder",
+    "version": "4.2.1",
+    "id": "clap_builder"
+  },
+  {
     "name": "clap_derive",
-    "version": "4.0.21",
+    "version": "4.2.0",
     "id": "clap_derive"
   },
   {
     "name": "clap_lex",
-    "version": "0.3.0",
+    "version": "0.4.1",
     "id": "clap_lex"
   },
   {
     "name": "color_quant",
     "version": "1.1.0",
     "id": "color_quant"
+  },
+  {
+    "name": "concolor-override",
+    "version": "1.0.0",
+    "id": "concolor_override"
+  },
+  {
+    "name": "concolor-query",
+    "version": "0.3.3",
+    "id": "concolor_query"
   },
   {
     "name": "cookie",
@@ -191,7 +216,7 @@
   },
   {
     "name": "cpufeatures",
-    "version": "0.2.5",
+    "version": "0.2.6",
     "id": "cpufeatures"
   },
   {
@@ -206,17 +231,17 @@
   },
   {
     "name": "crossbeam-channel",
-    "version": "0.5.6",
+    "version": "0.5.8",
     "id": "crossbeam_channel"
   },
   {
     "name": "crossbeam-deque",
-    "version": "0.8.2",
+    "version": "0.8.3",
     "id": "crossbeam_deque"
   },
   {
     "name": "crossbeam-epoch",
-    "version": "0.9.13",
+    "version": "0.9.14",
     "id": "crossbeam_epoch"
   },
   {
@@ -226,7 +251,7 @@
   },
   {
     "name": "crossbeam-utils",
-    "version": "0.8.14",
+    "version": "0.8.15",
     "id": "crossbeam_utils"
   },
   {
@@ -236,7 +261,7 @@
   },
   {
     "name": "csv",
-    "version": "1.1.6",
+    "version": "1.2.1",
     "id": "csv"
   },
   {
@@ -271,12 +296,12 @@
   },
   {
     "name": "either",
-    "version": "1.8.0",
+    "version": "1.8.1",
     "id": "either"
   },
   {
     "name": "encoding_rs",
-    "version": "0.8.31",
+    "version": "0.8.32",
     "id": "encoding_rs"
   },
   {
@@ -291,7 +316,7 @@
   },
   {
     "name": "exr",
-    "version": "1.5.2",
+    "version": "1.6.3",
     "id": "exr"
   },
   {
@@ -306,12 +331,17 @@
   },
   {
     "name": "fastrand",
-    "version": "1.8.0",
+    "version": "1.9.0",
     "id": "fastrand"
   },
   {
+    "name": "fdeflate",
+    "version": "0.3.0",
+    "id": "fdeflate"
+  },
+  {
     "name": "filetime",
-    "version": "0.2.19",
+    "version": "0.2.21",
     "id": "filetime"
   },
   {
@@ -356,7 +386,7 @@
   },
   {
     "name": "futures",
-    "version": "0.3.25",
+    "version": "0.3.28",
     "id": "futures"
   },
   {
@@ -366,62 +396,62 @@
   },
   {
     "name": "futures-channel",
-    "version": "0.3.25",
+    "version": "0.3.28",
     "id": "futures_channel"
   },
   {
     "name": "futures-core",
-    "version": "0.3.25",
+    "version": "0.3.28",
     "id": "futures_core"
   },
   {
     "name": "futures-executor",
-    "version": "0.3.25",
+    "version": "0.3.28",
     "id": "futures_executor"
   },
   {
     "name": "futures-io",
-    "version": "0.3.25",
+    "version": "0.3.28",
     "id": "futures_io"
   },
   {
     "name": "futures-macro",
-    "version": "0.3.25",
+    "version": "0.3.28",
     "id": "futures_macro"
   },
   {
     "name": "futures-sink",
-    "version": "0.3.25",
+    "version": "0.3.28",
     "id": "futures_sink"
   },
   {
     "name": "futures-task",
-    "version": "0.3.25",
+    "version": "0.3.28",
     "id": "futures_task"
   },
   {
     "name": "futures-util",
-    "version": "0.3.25",
+    "version": "0.3.28",
     "id": "futures_util"
   },
   {
     "name": "generic-array",
-    "version": "0.14.6",
+    "version": "0.14.7",
     "id": "generic_array"
   },
   {
     "name": "getrandom",
-    "version": "0.2.8",
+    "version": "0.2.9",
     "id": "getrandom"
   },
   {
     "name": "gif",
-    "version": "0.11.4",
+    "version": "0.12.0",
     "id": "gif"
   },
   {
     "name": "gimli",
-    "version": "0.27.0",
+    "version": "0.27.2",
     "id": "gimli"
   },
   {
@@ -431,7 +461,7 @@
   },
   {
     "name": "h2",
-    "version": "0.3.15",
+    "version": "0.3.16",
     "id": "h2"
   },
   {
@@ -441,7 +471,7 @@
   },
   {
     "name": "hashbrown",
-    "version": "0.13.1",
+    "version": "0.13.2",
     "id": "hashbrown"
   },
   {
@@ -456,7 +486,7 @@
   },
   {
     "name": "heck",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "id": "heck"
   },
   {
@@ -471,7 +501,7 @@
   },
   {
     "name": "http",
-    "version": "0.2.8",
+    "version": "0.2.9",
     "id": "http"
   },
   {
@@ -496,7 +526,7 @@
   },
   {
     "name": "hyper",
-    "version": "0.14.23",
+    "version": "0.14.25",
     "id": "hyper"
   },
   {
@@ -506,7 +536,7 @@
   },
   {
     "name": "iana-time-zone",
-    "version": "0.1.53",
+    "version": "0.1.56",
     "id": "iana_time_zone"
   },
   {
@@ -521,17 +551,17 @@
   },
   {
     "name": "image",
-    "version": "0.24.5",
+    "version": "0.24.6",
     "id": "image"
   },
   {
     "name": "indexmap",
-    "version": "1.9.2",
+    "version": "1.9.3",
     "id": "indexmap"
   },
   {
     "name": "io-lifetimes",
-    "version": "1.0.3",
+    "version": "1.0.10",
     "id": "io_lifetimes"
   },
   {
@@ -541,12 +571,12 @@
   },
   {
     "name": "ipnet",
-    "version": "2.7.1",
+    "version": "2.7.2",
     "id": "ipnet"
   },
   {
     "name": "is-terminal",
-    "version": "0.4.2",
+    "version": "0.4.7",
     "id": "is_terminal"
   },
   {
@@ -556,13 +586,8 @@
   },
   {
     "name": "itoa",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "id": "itoa"
-  },
-  {
-    "name": "itoa",
-    "version": "0.4.8",
-    "id": "itoa_0_4_8"
   },
   {
     "name": "jpeg-decoder",
@@ -581,7 +606,7 @@
   },
   {
     "name": "libc",
-    "version": "0.2.139",
+    "version": "0.2.141",
     "id": "libc"
   },
   {
@@ -591,7 +616,7 @@
   },
   {
     "name": "libsqlite3-sys",
-    "version": "0.25.2",
+    "version": "0.26.0",
     "id": "libsqlite3_sys"
   },
   {
@@ -601,7 +626,7 @@
   },
   {
     "name": "linux-raw-sys",
-    "version": "0.1.4",
+    "version": "0.3.1",
     "id": "linux_raw_sys"
   },
   {
@@ -641,7 +666,7 @@
   },
   {
     "name": "matches",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "id": "matches"
   },
   {
@@ -670,13 +695,8 @@
     "id": "memoffset"
   },
   {
-    "name": "memoffset",
-    "version": "0.7.1",
-    "id": "memoffset_0_7_1"
-  },
-  {
     "name": "mime",
-    "version": "0.3.16",
+    "version": "0.3.17",
     "id": "mime"
   },
   {
@@ -691,22 +711,27 @@
   },
   {
     "name": "miniz_oxide",
-    "version": "0.6.2",
+    "version": "0.7.1",
     "id": "miniz_oxide"
   },
   {
+    "name": "miniz_oxide",
+    "version": "0.6.2",
+    "id": "miniz_oxide_0_6_2"
+  },
+  {
     "name": "mio",
-    "version": "0.8.5",
+    "version": "0.8.6",
     "id": "mio"
   },
   {
     "name": "nalgebra",
-    "version": "0.31.4",
+    "version": "0.32.2",
     "id": "nalgebra"
   },
   {
     "name": "nalgebra-macros",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "id": "nalgebra_macros"
   },
   {
@@ -726,7 +751,7 @@
   },
   {
     "name": "nom",
-    "version": "7.1.2",
+    "version": "7.1.3",
     "id": "nom"
   },
   {
@@ -741,7 +766,7 @@
   },
   {
     "name": "num-complex",
-    "version": "0.4.2",
+    "version": "0.4.3",
     "id": "num_complex"
   },
   {
@@ -771,27 +796,22 @@
   },
   {
     "name": "object",
-    "version": "0.30.1",
+    "version": "0.30.3",
     "id": "object"
   },
   {
     "name": "once_cell",
-    "version": "1.17.0",
+    "version": "1.17.1",
     "id": "once_cell"
   },
   {
-    "name": "opaque-debug",
-    "version": "0.3.0",
-    "id": "opaque_debug"
-  },
-  {
     "name": "openssl",
-    "version": "0.10.45",
+    "version": "0.10.50",
     "id": "openssl"
   },
   {
     "name": "openssl-macros",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "id": "openssl_macros"
   },
   {
@@ -801,7 +821,7 @@
   },
   {
     "name": "openssl-sys",
-    "version": "0.9.80",
+    "version": "0.9.85",
     "id": "openssl_sys"
   },
   {
@@ -810,23 +830,18 @@
     "id": "ordered_float"
   },
   {
-    "name": "os_str_bytes",
-    "version": "6.4.1",
-    "id": "os_str_bytes"
-  },
-  {
     "name": "parking_lot",
     "version": "0.12.1",
     "id": "parking_lot"
   },
   {
     "name": "parking_lot_core",
-    "version": "0.9.5",
+    "version": "0.9.7",
     "id": "parking_lot_core"
   },
   {
     "name": "paste",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "id": "paste"
   },
   {
@@ -836,7 +851,7 @@
   },
   {
     "name": "petgraph",
-    "version": "0.6.2",
+    "version": "0.6.3",
     "id": "petgraph"
   },
   {
@@ -896,22 +911,22 @@
   },
   {
     "name": "png",
-    "version": "0.17.7",
+    "version": "0.17.8",
     "id": "png"
   },
   {
     "name": "postgres",
-    "version": "0.19.4",
+    "version": "0.19.5",
     "id": "postgres"
   },
   {
     "name": "postgres-protocol",
-    "version": "0.6.4",
+    "version": "0.6.5",
     "id": "postgres_protocol"
   },
   {
     "name": "postgres-types",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "id": "postgres_types"
   },
   {
@@ -926,23 +941,8 @@
   },
   {
     "name": "proc-macro2",
-    "version": "1.0.49",
+    "version": "1.0.56",
     "id": "proc_macro2"
-  },
-  {
-    "name": "proc-macro-error",
-    "version": "1.0.4",
-    "id": "proc_macro_error"
-  },
-  {
-    "name": "proc-macro-error-attr",
-    "version": "1.0.4",
-    "id": "proc_macro_error_attr"
-  },
-  {
-    "name": "proc-macro-hack",
-    "version": "0.5.20+deprecated",
-    "id": "proc_macro_hack"
   },
   {
     "name": "psl-types",
@@ -955,8 +955,13 @@
     "id": "publicsuffix"
   },
   {
+    "name": "qoi",
+    "version": "0.4.1",
+    "id": "qoi"
+  },
+  {
     "name": "quote",
-    "version": "1.0.23",
+    "version": "1.0.26",
     "id": "quote"
   },
   {
@@ -986,37 +991,27 @@
   },
   {
     "name": "rayon",
-    "version": "1.6.1",
+    "version": "1.7.0",
     "id": "rayon"
   },
   {
     "name": "rayon-core",
-    "version": "1.10.1",
+    "version": "1.11.0",
     "id": "rayon_core"
   },
   {
     "name": "regex",
-    "version": "1.7.1",
+    "version": "1.7.3",
     "id": "regex"
   },
   {
-    "name": "regex-automata",
-    "version": "0.1.10",
-    "id": "regex_automata"
-  },
-  {
     "name": "regex-syntax",
-    "version": "0.6.28",
+    "version": "0.6.29",
     "id": "regex_syntax"
   },
   {
-    "name": "remove_dir_all",
-    "version": "0.5.3",
-    "id": "remove_dir_all"
-  },
-  {
     "name": "reqwest",
-    "version": "0.11.13",
+    "version": "0.11.16",
     "id": "reqwest"
   },
   {
@@ -1026,12 +1021,12 @@
   },
   {
     "name": "rusqlite",
-    "version": "0.28.0",
+    "version": "0.29.0",
     "id": "rusqlite"
   },
   {
     "name": "rustc-demangle",
-    "version": "0.1.21",
+    "version": "0.1.22",
     "id": "rustc_demangle"
   },
   {
@@ -1041,12 +1036,12 @@
   },
   {
     "name": "rustix",
-    "version": "0.36.6",
+    "version": "0.37.11",
     "id": "rustix"
   },
   {
     "name": "ryu",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "id": "ryu"
   },
   {
@@ -1060,11 +1055,6 @@
     "id": "same_file"
   },
   {
-    "name": "scoped_threadpool",
-    "version": "0.1.9",
-    "id": "scoped_threadpool"
-  },
-  {
     "name": "scopeguard",
     "version": "1.1.0",
     "id": "scopeguard"
@@ -1076,23 +1066,28 @@
   },
   {
     "name": "semver",
-    "version": "1.0.16",
+    "version": "1.0.17",
     "id": "semver"
   },
   {
     "name": "serde",
-    "version": "1.0.152",
+    "version": "1.0.160",
     "id": "serde"
   },
   {
     "name": "serde_derive",
-    "version": "1.0.152",
+    "version": "1.0.160",
     "id": "serde_derive"
   },
   {
     "name": "serde_json",
-    "version": "1.0.91",
+    "version": "1.0.95",
     "id": "serde_json"
+  },
+  {
+    "name": "serde_spanned",
+    "version": "0.6.1",
+    "id": "serde_spanned"
   },
   {
     "name": "serde_urlencoded",
@@ -1121,13 +1116,18 @@
   },
   {
     "name": "signal-hook-registry",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "id": "signal_hook_registry"
   },
   {
     "name": "simba",
-    "version": "0.7.3",
+    "version": "0.8.1",
     "id": "simba"
+  },
+  {
+    "name": "simd-adler32",
+    "version": "0.3.5",
+    "id": "simd_adler32"
   },
   {
     "name": "siphasher",
@@ -1136,7 +1136,7 @@
   },
   {
     "name": "slab",
-    "version": "0.4.7",
+    "version": "0.4.8",
     "id": "slab"
   },
   {
@@ -1151,12 +1151,17 @@
   },
   {
     "name": "socket2",
-    "version": "0.4.7",
+    "version": "0.5.2",
     "id": "socket2"
   },
   {
+    "name": "socket2",
+    "version": "0.4.9",
+    "id": "socket2_0_4_9"
+  },
+  {
     "name": "spin",
-    "version": "0.9.4",
+    "version": "0.9.8",
     "id": "spin"
   },
   {
@@ -1166,7 +1171,7 @@
   },
   {
     "name": "string_cache",
-    "version": "0.8.4",
+    "version": "0.8.7",
     "id": "string_cache"
   },
   {
@@ -1191,8 +1196,13 @@
   },
   {
     "name": "syn",
-    "version": "1.0.107",
+    "version": "2.0.14",
     "id": "syn"
+  },
+  {
+    "name": "syn",
+    "version": "1.0.109",
+    "id": "syn_1_0_109"
   },
   {
     "name": "tar",
@@ -1201,7 +1211,7 @@
   },
   {
     "name": "tempfile",
-    "version": "3.3.0",
+    "version": "3.5.0",
     "id": "tempfile"
   },
   {
@@ -1211,12 +1221,12 @@
   },
   {
     "name": "termcolor",
-    "version": "1.1.3",
+    "version": "1.2.0",
     "id": "termcolor"
   },
   {
     "name": "terminal_size",
-    "version": "0.2.3",
+    "version": "0.2.6",
     "id": "terminal_size"
   },
   {
@@ -1226,12 +1236,12 @@
   },
   {
     "name": "thiserror",
-    "version": "1.0.38",
+    "version": "1.0.40",
     "id": "thiserror"
   },
   {
     "name": "thiserror-impl",
-    "version": "1.0.38",
+    "version": "1.0.40",
     "id": "thiserror_impl"
   },
   {
@@ -1241,7 +1251,7 @@
   },
   {
     "name": "thread_local",
-    "version": "1.1.4",
+    "version": "1.1.7",
     "id": "thread_local"
   },
   {
@@ -1256,7 +1266,7 @@
   },
   {
     "name": "time",
-    "version": "0.3.17",
+    "version": "0.3.20",
     "id": "time"
   },
   {
@@ -1271,7 +1281,7 @@
   },
   {
     "name": "time-macros",
-    "version": "0.2.6",
+    "version": "0.2.8",
     "id": "time_macros"
   },
   {
@@ -1281,12 +1291,12 @@
   },
   {
     "name": "tinyvec_macros",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "id": "tinyvec_macros"
   },
   {
     "name": "tokio",
-    "version": "1.24.1",
+    "version": "1.27.0",
     "id": "tokio"
   },
   {
@@ -1296,28 +1306,38 @@
   },
   {
     "name": "tokio-macros",
-    "version": "1.8.2",
+    "version": "2.0.0",
     "id": "tokio_macros"
   },
   {
     "name": "tokio-native-tls",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "id": "tokio_native_tls"
   },
   {
     "name": "tokio-postgres",
-    "version": "0.7.7",
+    "version": "0.7.8",
     "id": "tokio_postgres"
   },
   {
     "name": "tokio-util",
-    "version": "0.7.4",
+    "version": "0.7.7",
     "id": "tokio_util"
   },
   {
     "name": "toml",
-    "version": "0.5.10",
+    "version": "0.7.3",
     "id": "toml"
+  },
+  {
+    "name": "toml_datetime",
+    "version": "0.6.1",
+    "id": "toml_datetime"
+  },
+  {
+    "name": "toml_edit",
+    "version": "0.19.8",
+    "id": "toml_edit"
   },
   {
     "name": "tower-service",
@@ -1361,12 +1381,12 @@
   },
   {
     "name": "unicode-bidi",
-    "version": "0.3.8",
+    "version": "0.3.13",
     "id": "unicode_bidi"
   },
   {
     "name": "unicode-ident",
-    "version": "1.0.6",
+    "version": "1.0.8",
     "id": "unicode_ident"
   },
   {
@@ -1381,7 +1401,7 @@
   },
   {
     "name": "unicode-segmentation",
-    "version": "1.10.0",
+    "version": "1.10.1",
     "id": "unicode_segmentation"
   },
   {
@@ -1415,8 +1435,13 @@
     "id": "utf8"
   },
   {
+    "name": "utf8parse",
+    "version": "0.2.1",
+    "id": "utf8parse"
+  },
+  {
     "name": "uuid",
-    "version": "1.2.2",
+    "version": "1.3.1",
     "id": "uuid"
   },
   {
@@ -1431,7 +1456,7 @@
   },
   {
     "name": "walkdir",
-    "version": "2.3.2",
+    "version": "2.3.3",
     "id": "walkdir"
   },
   {
@@ -1446,13 +1471,18 @@
   },
   {
     "name": "wide",
-    "version": "0.7.5",
+    "version": "0.7.8",
     "id": "wide"
   },
   {
     "name": "winapi",
     "version": "0.3.9",
     "id": "winapi"
+  },
+  {
+    "name": "winnow",
+    "version": "0.4.1",
+    "id": "winnow"
   },
   {
     "name": "xattr",
@@ -1468,5 +1498,10 @@
     "name": "yaml-rust",
     "version": "0.4.5",
     "id": "yaml_rust"
+  },
+  {
+    "name": "zune-inflate",
+    "version": "0.2.53",
+    "id": "zune_inflate"
   }
 ]
