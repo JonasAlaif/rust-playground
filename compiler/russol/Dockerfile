@@ -54,7 +54,7 @@ WORKDIR /playground
 RUN cd russol-alpha && cargo build --release
 ENV PATH="${PATH}:/playground/russol-alpha/target/release"
 ENV SUSLIK_DIR="/playground/russol-alpha/suslik"
-RUN cd russol-alpha && cargo run --release --bin ruslic ruslic/tests/synth/paper/misc/custom/general/clone.rs
+RUN cd russol-alpha && cargo run --release --bin ruslic ruslic/tests/synth/other/ci/copy.rs
 
 RUN cargo russol
 RUN rm src/*.rs
