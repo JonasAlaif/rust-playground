@@ -62,7 +62,7 @@ Vagrant.configure("2") do |config|
 
             # Run backend
             cd /vagrant/ui
-            cargo run --release &
+            nohup cargo run --release &
         SHELL
     end
 end
