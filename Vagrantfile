@@ -27,6 +27,9 @@ Vagrant.configure("2") do |config|
             vb.cpus = 16
         end
 
+        # Set environment variables (requires `gists_token` file with "export ENV_VAR=value")
+        node.vm.provision :shell, inline: "echo 'source /vagrant/gists_token' > /etc/profile.d/sa-environment.sh", :run => 'always'
+
         # Install Docker
         node.vm.provision :docker
 
